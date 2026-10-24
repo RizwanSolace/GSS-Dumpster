@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 // Locally hosted truck footage keeps the hero video independent of third-party availability.
-const videoUrl = '/gss-dumpster-truck-optimized.mp4'
+const videoUrl = '/gss-dumpster-truck-640.mp4'
 
 /** Loads the decorative clip only when motion and data-saver settings allow it. */
 export function HeroVideo() {
@@ -15,5 +15,5 @@ export function HeroVideo() {
     if (!reduceMotion && !connection?.saveData) setEnabled(true)
   }, [])
 
-  return <video autoPlay={enabled} className="absolute inset-0 z-0 size-full object-cover object-center" poster="/dumpster-hero.png" muted loop playsInline preload={enabled ? 'metadata' : 'none'} aria-hidden="true" onCanPlay={(event) => { void event.currentTarget.play().catch(() => {}) }}><source src={videoUrl} type="video/mp4" /></video>
+  return <video autoPlay={enabled} className="absolute inset-0 z-0 size-full object-cover object-center" poster="/dumpster-hero.jpg" muted loop playsInline preload={enabled ? 'auto' : 'none'} aria-hidden="true" onCanPlay={(event) => { void event.currentTarget.play().catch(() => {}) }}><source src={videoUrl} type="video/mp4" /></video>
 }
