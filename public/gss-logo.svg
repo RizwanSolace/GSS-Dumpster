@@ -1,11 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 205" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 255" role="img" aria-labelledby="title">
   <title id="title">GSS General Site Services</title>
-  <desc id="desc">Orange GSS letters within a navy blue oval, with General Site Services below.</desc>
-  <g fill="none" stroke="#163d78" stroke-linecap="round">
-    <path stroke-width="9" d="M24 107C23 51 77 18 158 18c59 0 108 18 122 50 13 30-5 62-37 82"/>
-    <path stroke-width="11" d="M34 117c14 37 54 55 119 55 51 0 90-13 112-37"/>
-    <path stroke-width="5" d="M55 49c27-21 67-31 112-31M20 91c3-30 21-53 48-69"/>
-  </g>
-  <text x="45" y="111" fill="#f45116" font-family="Arial Black,Arial,sans-serif" font-size="76" font-style="italic" font-weight="900" letter-spacing="-6">GSS</text>
-  <text x="150" y="196" fill="#163d78" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="800" text-anchor="middle">General Site Services</text>
+  <ellipse cx="210" cy="112" rx="197" ry="98" transform="rotate(-10 210 112)" fill="none" stroke="#163d78" stroke-width="16"/>
+  <path d="M54 147C95 39 279 1 361 64" fill="none" stroke="#163d78" stroke-width="13" stroke-linecap="round"/>
+  <text x="74" y="151" fill="#f25b16" font-family="Arial,Helvetica,sans-serif" font-size="112" font-style="italic" font-weight="900" letter-spacing="-10">GSS</text>
+  <text x="49" y="237" fill="#163d78" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" letter-spacing="-.8">General Site Services</text>
 </svg>

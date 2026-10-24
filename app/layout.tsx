@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'GSS Dumpsters | Same-Day Roll-Off Dumpster Rental in Houston',
   description: 'Flat-rate roll-off dumpster rentals delivered same day across Houston, Katy, Cypress, Bellville and surrounding Texas communities.',
   generator: 'v0.app',
+  icons: { icon: '/icon.svg', shortcut: '/icon.svg' },
 }
 
 export const viewport: Viewport = {
