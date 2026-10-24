@@ -1,0 +1,19 @@
+import Link from 'next/link'
+import { ArrowRight, Check, MapPin, Phone } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
+
+export type MarketingPageData = {
+  eyebrow: string; title: string; intro: string; sections: { title: string; body: string; bullets?: string[] }[]; links?: [string, string][]
+}
+
+export function MarketingPage({ data }: { data: MarketingPageData }) {
+  return <div className="min-h-screen bg-[#f7f6f2] text-[#202321]">
+    <SiteHeader/>
+    <main>
+      <section className="relative overflow-hidden bg-[#202321] text-white"><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,23,21,.96),rgba(20,23,21,.74),rgba(20,23,21,.55))]"/><div className="absolute inset-0 bg-cover bg-center opacity-35" style={{backgroundImage:"url('/dumpster-hero.png')"}}/><div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"><div className="mb-5 flex items-center gap-2 text-xs font-black uppercase tracking-[.2em] text-[#ffb000]"><span className="h-px w-8 bg-[#ffb000]"/>{data.eyebrow}</div><h1 className="max-w-4xl text-4xl font-black leading-tight tracking-[-.04em] sm:text-6xl">{data.title}</h1><p className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">{data.intro}</p><div className="mt-8 flex flex-wrap gap-3"><Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#ffb000] px-6 py-4 font-black text-[#202321]">Get a flat-rate quote <ArrowRight className="size-4"/></Link><a href="tel:7132520906" className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-4 font-bold"><Phone className="size-4"/>(713) 252-0906</a></div></div></section>
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_310px] lg:px-8 lg:py-16"><div className="space-y-5">{data.sections.map((section) => <article key={section.title} className="rounded-2xl border border-black/10 bg-white p-6 sm:p-8"><h2 className="text-2xl font-black tracking-tight">{section.title}</h2><p className="mt-3 leading-7 text-[#626b64]">{section.body}</p>{section.bullets && <ul className="mt-5 grid gap-3 sm:grid-cols-2">{section.bullets.map((bullet) => <li key={bullet} className="flex items-start gap-2 text-sm font-semibold"><Check className="mt-0.5 size-4 shrink-0 text-[#db741b]"/>{bullet}</li>)}</ul>}</article>)}</div><aside className="h-fit rounded-2xl bg-[#202321] p-6 text-white lg:sticky lg:top-28"><p className="text-xs font-black uppercase tracking-[.18em] text-[#ffb000]">Quick links</p><h2 className="mt-2 text-xl font-black">Plan your rental</h2><div className="mt-5 grid gap-3">{(data.links ?? [['View dumpster sizes','/dumpster-sizes'],['Check service areas','/service-areas'],['Ask about materials','/acceptable-materials']]).map(([label, href])=><Link key={href} href={href} className="flex items-center justify-between border-b border-white/10 py-3 text-sm font-bold text-white/85 hover:text-[#ffb000]">{label}<ArrowRight className="size-4"/></Link>)}</div><div className="mt-6 rounded-xl bg-white/5 p-4"><div className="flex items-center gap-2 text-sm font-bold"><MapPin className="size-4 text-[#ffb000]"/> Serving Greater Houston</div><p className="mt-2 text-sm leading-6 text-white/60">Call to confirm delivery availability for your address and preferred date.</p></div><a href="tel:7132520906" className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#ffb000] px-4 py-3 font-black text-[#202321]"><Phone className="size-4"/> Call GSS</a></aside></section>
+    </main>
+    <SiteFooter/>
+  </div>
+}
